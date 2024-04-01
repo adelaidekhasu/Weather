@@ -15,7 +15,8 @@ function refreshWeather(response) {
   windSpeedElement.innerHTML = `${response.data.wind.speed}mph`;
   timeElement.innerHTML = formatDate(date);
 iconElement.innerHTML= `<img src="${response.data.condition.icon_url}" class="current-temp-icon" />`;
-  
+
+getForecast(response.data.city) ;
 }
 
 function formatDate(date) {
@@ -100,4 +101,3 @@ function displayForecast(response) {
 let searchformelement = document.querySelector("#search-form");
 searchformelement.addEventListener("submit", handleSearchSubmit);
 searchCity("Pretoria");
-displayForecast("Pretoria");
